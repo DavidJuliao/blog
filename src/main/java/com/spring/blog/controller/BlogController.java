@@ -58,10 +58,10 @@ public class BlogController {
         return "redirect:/posts";
     }
 
-    @RequestMapping(value="/posts/{id}", method=RequestMethod.DELETE)
-    public String deletePost(@PathVariable("id") long id){
+    @RequestMapping(value="/deletarPost/{id}", method=RequestMethod.DELETE)
+    public String deletePost(@PathVariable("id") String id){
 
-        blogService.deletePost(id);
+        blogService.deletePost(Long.valueOf(id));
         return "redirect:/posts";
     }
 }
